@@ -1,7 +1,9 @@
+using System.Net.Http.Json;
 using AutoMapper;
-using CloudManagedConfiguration.Domain;
+using CloudManagedConfiguration.Application.Domain;
+using CloudManagedConfiguration.Config.Config;
 
-namespace CloudManagedConfiguration.Services;
+namespace CloudManagedConfiguration.Application.Services;
 
 public interface IUniversitiesService
 {
@@ -14,18 +16,18 @@ public class UniversitiesService : IUniversitiesService
     private readonly IMapper _mapper;
     private readonly string _remoteServiceBaseUrl;
 
-    public UniversitiesService(HttpClient httpClient, IMapper mapper, IConfiguration configuration)
+    public UniversitiesService(HttpClient httpClient, IMapper mapper, UniversityService config)
     {
         _httpClient = httpClient;
         _mapper = mapper;
-        _remoteServiceBaseUrl = configuration.GetValue<string>("UniversityService:Endpoint");
+        _remoteServiceBaseUrl = config.Endpoint;
     }
 
     public async Task<IEnumerable<UniversityDto>> GetUniversities()
     {
         var universities = await _httpClient.GetFromJsonAsync<IEnumerable<University>?>(_remoteServiceBaseUrl);
 
-        return universities?.Select(university => _mapper.Map<UniversityDto>(university)) ??
+        return universities?.Select(university => _mapper.Map<UniversityDto>(university)) ?? 
                Array.Empty<UniversityDto>();
     }
 }

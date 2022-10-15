@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace CloudManagedConfiguration.Domain;
+namespace CloudManagedConfiguration.Application.Domain;
 
 public class University
 {

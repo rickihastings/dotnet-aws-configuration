@@ -1,8 +1,8 @@
-using CloudManagedConfiguration.Domain;
-using CloudManagedConfiguration.Services;
+using CloudManagedConfiguration.Application.Domain;
+using CloudManagedConfiguration.Application.Services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CloudManagedConfiguration.Controllers;
+namespace CloudManagedConfiguration.Web.Controllers;
 
 [ApiController]
 [Route("universities")]

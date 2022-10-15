@@ -1,7 +1,7 @@
 using AutoMapper;
-using CloudManagedConfiguration.Domain;
+using CloudManagedConfiguration.Application.Domain;
 
-namespace CloudManagedConfiguration.Profiles;
+namespace CloudManagedConfiguration.Application.Profiles;
 
 public class UniversityProfile : Profile
 {
