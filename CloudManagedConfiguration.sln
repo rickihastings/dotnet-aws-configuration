@@ -1,6 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudManagedConfiguration", "CloudManagedConfiguration\CloudManagedConfiguration.csproj", "{1EBA2B6F-DEFA-4428-8F21-F2A8DD9DC853}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudManagedConfiguration.Web", "src\CloudManagedConfiguration.Web\CloudManagedConfiguration.Web.csproj", "{1EBA2B6F-DEFA-4428-8F21-F2A8DD9DC853}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudManagedConfiguration.Config", "src\CloudManagedConfiguration.Config\CloudManagedConfiguration.Config.csproj", "{474C1DD8-37C2-436B-9880-84C9308BB011}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{FD26C4EE-E8B8-4773-9844-5869EA5AE161}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudManagedConfiguration.Lambda", "src\CloudManagedConfiguration.Lambda\CloudManagedConfiguration.Lambda.csproj", "{26C3B109-CE92-44F3-9C31-13F27331248F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudManagedConfiguration.Application", "src\CloudManagedConfiguration.Application\CloudManagedConfiguration.Application.csproj", "{7619BFF1-BBD8-44D7-9B72-CB0003AC9E21}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -12,5 +20,23 @@ Global
 		{1EBA2B6F-DEFA-4428-8F21-F2A8DD9DC853}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1EBA2B6F-DEFA-4428-8F21-F2A8DD9DC853}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1EBA2B6F-DEFA-4428-8F21-F2A8DD9DC853}.Release|Any CPU.Build.0 = Release|Any CPU
+		{474C1DD8-37C2-436B-9880-84C9308BB011}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{474C1DD8-37C2-436B-9880-84C9308BB011}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{474C1DD8-37C2-436B-9880-84C9308BB011}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{474C1DD8-37C2-436B-9880-84C9308BB011}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26C3B109-CE92-44F3-9C31-13F27331248F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26C3B109-CE92-44F3-9C31-13F27331248F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26C3B109-CE92-44F3-9C31-13F27331248F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26C3B109-CE92-44F3-9C31-13F27331248F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7619BFF1-BBD8-44D7-9B72-CB0003AC9E21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7619BFF1-BBD8-44D7-9B72-CB0003AC9E21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7619BFF1-BBD8-44D7-9B72-CB0003AC9E21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7619BFF1-BBD8-44D7-9B72-CB0003AC9E21}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{474C1DD8-37C2-436B-9880-84C9308BB011} = {FD26C4EE-E8B8-4773-9844-5869EA5AE161}
+		{1EBA2B6F-DEFA-4428-8F21-F2A8DD9DC853} = {FD26C4EE-E8B8-4773-9844-5869EA5AE161}
+		{26C3B109-CE92-44F3-9C31-13F27331248F} = {FD26C4EE-E8B8-4773-9844-5869EA5AE161}
+		{7619BFF1-BBD8-44D7-9B72-CB0003AC9E21} = {FD26C4EE-E8B8-4773-9844-5869EA5AE161}
 	EndGlobalSection
 EndGlobal

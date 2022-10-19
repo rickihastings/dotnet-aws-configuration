@@ -1,7 +1,8 @@
 using System.Net.Http.Json;
 using AutoMapper;
 using CloudManagedConfiguration.Application.Domain;
-using CloudManagedConfiguration.Config.Config;
+using CloudManagedConfiguration.Config.Options;
+using Microsoft.Extensions.Options;
 
 namespace CloudManagedConfiguration.Application.Services;
 
@@ -16,11 +17,11 @@ public class UniversitiesService : IUniversitiesService
     private readonly IMapper _mapper;
     private readonly string _remoteServiceBaseUrl;
 
-    public UniversitiesService(HttpClient httpClient, IMapper mapper, UniversityService config)
+    public UniversitiesService(HttpClient httpClient, IMapper mapper, IOptions<UniversityServiceOptions> config)
     {
         _httpClient = httpClient;
         _mapper = mapper;
-        _remoteServiceBaseUrl = config.Endpoint;
+        _remoteServiceBaseUrl = config.Value.Endpoint;
     }
 
     public async Task<IEnumerable<UniversityDto>> GetUniversities()
