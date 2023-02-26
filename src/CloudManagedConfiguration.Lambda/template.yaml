@@ -16,7 +16,8 @@ Globals:
 
 Resources:
   Function:
-    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Type: AWS::Serverless::Function
     Properties:
       CodeUri: ./
       Handler: CloudManagedConfiguration.Lambda::CloudManagedConfiguration.Lambda.Entrypoint::FunctionHandler
@@ -24,13 +25,15 @@ Resources:
       Architectures:
         - x86_64
       MemorySize: 256
-      Environment: # More info about Env Vars: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#environment-object
+      # More info about Env Vars: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#environment-object
+      Environment:
         Variables:
           ASPNETCORE_ENVIRONMENT: !Ref Environment
-          Endpoint: !Sub '{{resolve:ssm:/CloudManagedConfiguration/${Environment}/UniversityService/Endpoint}}'
+          UniversityService__Endpoint: !Sub '{{resolve:ssm:/CloudManagedConfiguration/${Environment}/UniversityService/Endpoint}}'
       Events:
         Index:
-          Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+          # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+          Type: Api
           Properties:
             Path: /
             Method: get
